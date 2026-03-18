@@ -241,6 +241,11 @@ const slides = [
     id: 10,
     type: "conclusion",
     label: "Заключение",
+  },
+  {
+    id: 11,
+    type: "sources",
+    label: "Источники",
     number: "10",
     title: "Заключение",
     text: "Наградная политика Тамбовской области — это живая система государственного признания, основанная на справедливых критериях и прозрачных процедурах. Закон «О наградах и премиях» создаёт правовой фундамент для поощрения лучших граждан региона — тех, кто ежедневным трудом приумножает его достояние.",
@@ -633,6 +638,60 @@ export default function Index() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Slide 11: Sources */}
+      <div
+        ref={(el) => { slideRefs.current[10] = el; }}
+        className="min-h-screen flex flex-col justify-center px-8 md:px-20 lg:px-32 py-16 border-t border-[hsl(40,15%,88%)] relative"
+      >
+        <SlideNumber n="11" />
+        <p style={{ fontFamily: "'IBM Plex Sans', sans-serif" }} className="text-[hsl(38,65%,52%)] text-xs tracking-[0.2em] uppercase mb-4">Библиография</p>
+        <div className="h-px w-12 mb-8" style={{ background: "hsl(38,65%,52%)" }} />
+        <h2 style={{ fontFamily: "'Cormorant', serif" }} className="text-4xl md:text-5xl font-light text-[hsl(30,15%,12%)] mb-12">
+          Список источников
+        </h2>
+        <ol className="space-y-5 max-w-3xl">
+          {[
+            {
+              num: "1",
+              text: "Закон Тамбовской области «О наградах и премиях Тамбовской области» (с изменениями и дополнениями) // Официальный интернет-портал правовой информации Тамбовской области.",
+            },
+            {
+              num: "2",
+              text: "Конституция Российской Федерации (принята всенародным голосованием 12.12.1993, с изменениями, одобренными в ходе общероссийского голосования 01.07.2020).",
+            },
+            {
+              num: "3",
+              text: "Указ Президента Российской Федерации от 07.09.2010 № 1099 «О мерах по совершенствованию государственной наградной системы Российской Федерации».",
+            },
+            {
+              num: "4",
+              text: "Устав (Основной закон) Тамбовской области Российской Федерации // Официальный сайт Тамбовской областной Думы. — tambovoblduma.ru.",
+            },
+            {
+              num: "5",
+              text: "Официальный сайт Администрации Тамбовской области. Раздел «Государственные награды». — tambov.gov.ru.",
+            },
+            {
+              num: "6",
+              text: "Постановления Администрации Тамбовской области о награждении граждан (2019–2024 гг.) // Электронный фонд правовых документов «Гарант».",
+            },
+            {
+              num: "7",
+              text: "Доклад о состоянии государственного управления в Тамбовской области за 2023 год // Администрация Тамбовской области, 2024.",
+            },
+          ].map((src) => (
+            <li key={src.num} className="flex gap-5 pb-5 border-b border-[hsl(40,15%,88%)] last:border-0 last:pb-0">
+              <span style={{ fontFamily: "'Cormorant', serif" }} className="text-2xl font-light text-[hsl(38,65%,52%)] shrink-0 leading-tight w-5 text-right">
+                {src.num}.
+              </span>
+              <p style={{ fontFamily: "'IBM Plex Sans', sans-serif" }} className="text-sm text-[hsl(30,10%,45%)] leading-relaxed">
+                {src.text}
+              </p>
+            </li>
+          ))}
+        </ol>
       </div>
     </div>
   );
